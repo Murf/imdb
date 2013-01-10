@@ -12,11 +12,12 @@ module Imdb
     # will be performed when a new object is created. Only when you use an
     # accessor that needs the remote data, a HTTP request is made (once).
     #
-    def initialize(imdb_id, title = nil, also_known_as = [])
+    def initialize(imdb_id, title = nil, also_known_as = [], type = nil)
       @id = imdb_id
       @url = "http://akas.imdb.com/title/tt#{imdb_id}/combined"
       @title = title.gsub(/"/, "") if title
       @also_known_as = also_known_as
+      @type = type
     end
 
     # Returns an array with cast members
