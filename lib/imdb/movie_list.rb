@@ -32,11 +32,17 @@ module Imdb
           alternative_titles = titles.map { |t| t.strip.imdb_strip_tags.imdb_unescape_html }
         end
 
+        if ( title.include?("TV Episode")  || title.include?("TV Series"))
+          type="TV"
+        else
+          type="Movie"
+        end
+
         alternative_titles.each do |aka|
           title += ", aka '"+aka+"'"
         end
 
-        [id, title, alternative_titles]
+        [id, title, alternative_titles, type]
       end.uniq.map do |values|
         Imdb::Movie.new(*values)
       end
