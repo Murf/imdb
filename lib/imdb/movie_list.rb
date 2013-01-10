@@ -34,6 +34,18 @@ module Imdb
 
         if ( title.include?("TV Episode")  || title.include?("TV Series"))
           type="TV"
+        elsif ( title.include?("(Actor"))
+          type="Actor"
+        elsif ( title.include?("(Actress"))
+          type="Actress"
+        elsif ( title.include?("(Self"))
+          type="Self"
+        elsif ( title.include?("(Producer"))
+          type="Producer"
+        elsif ( title.include?("(Thanks"))
+          type="Thanks"
+        elsif ( title.include?("(Soundtrack"))
+          type="Soundtrack"
         else
           type="Movie"
         end
