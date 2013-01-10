@@ -2,7 +2,7 @@ module Imdb
 
   # Represents a Movie on IMDB.com
   class Movie
-    attr_accessor :id, :url, :title, :also_known_as
+    attr_accessor :id, :url, :title, :also_known_as, :type
 
     # Initialize a new IMDB movie object with it's IMDB id (as a String)
     #
